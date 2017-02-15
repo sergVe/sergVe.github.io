@@ -1,0 +1,27 @@
+#my-header {
+	height: 100vh;
+}
+#my-main {
+	height: 100vh;
+	padding: 25vh 0;
+}
+.my-row {
+	margin: 25vh 0;
+}
+.my-second-row {
+
+	
+}
+.my-big-col {
+	height: 100px;
+	border: 2px solid #000;
+	margin-top: 100px;
+	
+}
+.my-third-row {
+	padding: 20px 20px;
+}
+.my-second-col {
+	height: 50px;
+	background-color: green;
+}
