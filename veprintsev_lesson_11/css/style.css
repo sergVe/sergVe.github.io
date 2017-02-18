@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.main-head {
+	margin-top: 3%;
+}
+.main-logo-border {
+	width: 155px;
+	height: 55px;
+	text-align: center;
+	border: 2px solid #706b73;
+	line-height: 49px;
+}
+.main-logo-border p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 36px;
+	color: #706b73;
+}
+.f-letter {
+	color: #fc6744;
+}
+.main-nav {
+	
+}
+.line {
+	display: block;
+	width: 25px;
+	height: 4px;
+	background-color: #706b73;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	-webkit-transform: translateY(-2px);
+	-ms-transform: translateY(-2px);
+	-o-transform: translateY(-2px);
+	transform: translateY(-2px);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+
+}
+.main-nav-bar {
+	position: relative;
+	float: right;
+	width: 25px;
+	margin-top: 32px;
+}
+.line::before {
+	content: "";
+	
+	width: 25px;
+	height: 4px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	background-color: #706b73;
+	-webkit-transform: translateY(-8px);
+	-ms-transform: translateY(-8px);
+	-o-transform: translateY(-8px);
+	transform: translateY(-8px);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+.line::after {
+	content: "";
+	
+	width: 25px;
+	height: 4px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	background-color: #706b73;
+	-webkit-transform: translateY(4px);
+	-ms-transform: translateY(4px);
+	-o-transform: translateY(4px);
+	transform: translateY(4px);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
