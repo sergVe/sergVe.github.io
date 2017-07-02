@@ -35,5 +35,27 @@
       </ul>
     </div>
   </article>
+
+  <script>
+    const currentPhoto = document.getElementById('currentPhoto'),
+      prevPhoto = document.getElementById('prevPhoto'),
+      nextPhoto = document.getElementById('nextPhoto'),
+      photoAddresses = ['./i/breuer-building.jpg', './i/guggenheim-museum.jpg', './i/headquarters.jpg', './i/IAC.jpg', './i/new-museum.jpg'],
+      btnIds = ['prevPhoto', 'nextPhoto'],
+      nextStep = (i) => i < photoAddresses.length - 1 ? i + 1 : 0,
+      prevStep = (i) => i > 0 ? i - 1 : photoAddresses.length - 1;
+
+    let i = photoAddresses.length;
+
+    function flippingPhotos() {
+      i  = (btnIds.indexOf(this.id) === 1) ? nextStep(i) : prevStep(i);
+      currentPhoto.src = photoAddresses[i];
+    }
+
+    btnIds.forEach(item => {
+      const btn = document.getElementById(item);
+      btn.onclick = flippingPhotos;
+    });
+  </script>
 </body>
 </html>
