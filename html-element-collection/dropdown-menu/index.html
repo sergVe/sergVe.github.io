@@ -15,5 +15,15 @@
       <li><a href="#">Выйти</a></li>
     </ul>
   </div>
+
+  <script>
+    const myProfile = document.getElementsByClassName('wrapper-dropdown')[0];
+
+    function fadeOrShowMenu() {
+      myProfile.classList.toggle('active');
+    }
+
+    myProfile.onclick = fadeOrShowMenu;
+  </script>
 </body>
 </html>
