@@ -58,7 +58,6 @@
         audio.play();
         console.log(audio.currentTime);
         setInterval(function () {
-
           if (tempTime < audio.currentTime) {
             tempTime = audio.currentTime;
           }
@@ -71,9 +70,7 @@
       }
       else {
         audio.pause();
-
       }
-
     }
 
     function stopMusic() {
@@ -94,7 +91,6 @@
       }
       songTitle.title = tracks[i].split('.')[0];
       audio.src = tracks[i];
-
     }
 
     buttons.forEach(item => {
