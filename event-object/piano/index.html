@@ -1,29 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Задача 1. Пианино | Домашнее задание к лекции 2.1</title>
-  <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Задача 1. Пианино | Домашнее задание к лекции 2.1</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <ul class="set middle">
-    <li class="white">
-      <audio src=""></audio>
-    </li>
-    <li class="black">
-      <audio src=""></audio>
-    </li>
-  	<li class="white">
-      <audio src=""></audio>
-    </li>
-    <li class="black">
-      <audio src=""></audio>
-    </li>
-  	<li class="white">
-      <audio src=""></audio>
-    </li>
-  </ul>
+	<ul class="set middle">
+		<li class="white">
+			<audio src=""></audio>
+		</li>
+		<li class="black">
+			<audio src=""></audio>
+		</li>
+		<li class="white">
+			<audio src=""></audio>
+		</li>
+		<li class="black">
+			<audio src=""></audio>
+		</li>
+		<li class="white">
+			<audio src=""></audio>
+		</li>
+	</ul>
+
+	<script>
+    const soundsFilesNames = [
+      'first.mp3',
+      'second.mp3',
+      'third.mp3',
+      'fourth.mp3',
+      'fifth.mp3'
+    ];
+    const piano = document.getElementsByClassName('set')[0];
+
+    function changeMode(e) {
+
+        if (e.code.startsWith('Shift')) {
+					piano.classList.remove('middle');
+          piano.classList.add('lower');
+        }
+        else if (e.code.startsWith('Alt')) {
+          piano.classList.remove('middle');
+          piano.classList.add('higher');
+				}
+    }
+
+    function returnMode(e) {
+      if (e.code.startsWith('Shift') || e.code.startsWith('Alt')) {
+        const mode = [...piano.classList].find(el => el !== 'set');
+        piano.classList.remove(mode);
+        piano.classList.add('middle');
+			}
+		}
+
+    function playSound(index, level) {
+      return function(e) {
+        const currentPlayer = e.currentTarget.getElementsByTagName('audio')[0];
+        currentPlayer.src = `sounds/${level}/${soundsFilesNames[index]}`;
+        currentPlayer.play();
+			}
+    }
+
+    document.addEventListener('keydown', changeMode);
+    document.addEventListener('keyup', returnMode);
+
+   [...piano.getElementsByTagName('li')].forEach((item, index) => {
+      const level = [...piano.classList].find(el => el !== 'set');
+      console.log(level);
+      item.addEventListener('click', playSound(index, level));
+    })
+	</script>
 </body>
 </html>
